@@ -26,7 +26,22 @@ namespace Senac.Consultorio
             //Insere um paciente em uma lista
             pacientes.Add(pacienteConsultorio);
             //.Count vai retornar quantos itens eu tenho na miha lista
-            MessageBox.Show("Existem " + pacientes.Count() + " pacientes cadastrados.");
+            lblQuantidadePacientes.Text = pacientes.Count().ToString();
+
+            cmbListaPacientes.Items.Add(pacienteConsultorio);
+        }
+
+        private void cmbListaPacientes_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //1. pegar o cpf do paciente selecionado
+            Paciente pacienteSelecionado = cmbListaPacientes.SelectedItem as Paciente;
+            string cpf = pacienteSelecionado.CPF;
+
+            //2. Buscar os dados do paciente selecionado na minha lista
+            //Use o Where quando quiser buscar com uma condição (QUANDO)
+            Paciente paciente = pacientes.Where(p => p.CPF == cpf).First();
+
+            //3. Carregar os dados nos campos do formulário
         }
     }
 }

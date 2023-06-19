@@ -43,6 +43,13 @@
             label3 = new Label();
             label2 = new Label();
             label1 = new Label();
+            groupBox1 = new GroupBox();
+            lblQuantidadePacientes = new Label();
+            groupBox2 = new GroupBox();
+            label8 = new Label();
+            cmbListaPacientes = new ComboBox();
+            groupBox1.SuspendLayout();
+            groupBox2.SuspendLayout();
             SuspendLayout();
             // 
             // btnCadastrar
@@ -167,11 +174,65 @@
             label1.TabIndex = 19;
             label1.Text = "Nome:";
             // 
+            // groupBox1
+            // 
+            groupBox1.Controls.Add(lblQuantidadePacientes);
+            groupBox1.Location = new Point(693, 27);
+            groupBox1.Name = "groupBox1";
+            groupBox1.Size = new Size(298, 100);
+            groupBox1.TabIndex = 34;
+            groupBox1.TabStop = false;
+            groupBox1.Text = "Quantidade de pacientes";
+            // 
+            // lblQuantidadePacientes
+            // 
+            lblQuantidadePacientes.AutoSize = true;
+            lblQuantidadePacientes.Font = new Font("Segoe UI", 20F, FontStyle.Regular, GraphicsUnit.Point);
+            lblQuantidadePacientes.ForeColor = Color.DarkGreen;
+            lblQuantidadePacientes.Location = new Point(75, 37);
+            lblQuantidadePacientes.Name = "lblQuantidadePacientes";
+            lblQuantidadePacientes.Size = new Size(32, 37);
+            lblQuantidadePacientes.TabIndex = 0;
+            lblQuantidadePacientes.Text = "0";
+            // 
+            // groupBox2
+            // 
+            groupBox2.Controls.Add(label8);
+            groupBox2.Controls.Add(cmbListaPacientes);
+            groupBox2.Location = new Point(693, 173);
+            groupBox2.Name = "groupBox2";
+            groupBox2.Size = new Size(298, 176);
+            groupBox2.TabIndex = 35;
+            groupBox2.TabStop = false;
+            groupBox2.Text = "Carregar paciente";
+            // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.Location = new Point(18, 53);
+            label8.Name = "label8";
+            label8.Size = new Size(52, 15);
+            label8.TabIndex = 1;
+            label8.Text = "Paciente";
+            // 
+            // cmbListaPacientes
+            // 
+            cmbListaPacientes.DisplayMember = "Nome";
+            cmbListaPacientes.FormattingEnabled = true;
+            cmbListaPacientes.Location = new Point(18, 81);
+            cmbListaPacientes.Name = "cmbListaPacientes";
+            cmbListaPacientes.Size = new Size(256, 23);
+            cmbListaPacientes.TabIndex = 0;
+            cmbListaPacientes.ValueMember = "CPF";
+            cmbListaPacientes.SelectedIndexChanged += cmbListaPacientes_SelectedIndexChanged;
+            // 
             // FormPaciente
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(627, 366);
+            ClientSize = new Size(1075, 366);
+            Controls.Add(groupBox2);
+            Controls.Add(groupBox1);
             Controls.Add(btnCadastrar);
             Controls.Add(txtEndereco);
             Controls.Add(txtPeso);
@@ -189,6 +250,10 @@
             Controls.Add(label1);
             Name = "FormPaciente";
             Text = "Consultorio";
+            groupBox1.ResumeLayout(false);
+            groupBox1.PerformLayout();
+            groupBox2.ResumeLayout(false);
+            groupBox2.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -210,5 +275,10 @@
         private Label label3;
         private Label label2;
         private Label label1;
+        private GroupBox groupBox1;
+        private Label lblQuantidadePacientes;
+        private GroupBox groupBox2;
+        private Label label8;
+        private ComboBox cmbListaPacientes;
     }
 }
