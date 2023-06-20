@@ -48,13 +48,15 @@
             groupBox2 = new GroupBox();
             label8 = new Label();
             cmbListaPacientes = new ComboBox();
+            txtUltimoProcedimento = new TextBox();
+            label9 = new Label();
             groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
             SuspendLayout();
             // 
             // btnCadastrar
             // 
-            btnCadastrar.Location = new Point(539, 326);
+            btnCadastrar.Location = new Point(539, 401);
             btnCadastrar.Name = "btnCadastrar";
             btnCadastrar.Size = new Size(75, 23);
             btnCadastrar.TabIndex = 33;
@@ -64,7 +66,7 @@
             // 
             // txtEndereco
             // 
-            txtEndereco.Location = new Point(12, 280);
+            txtEndereco.Location = new Point(12, 355);
             txtEndereco.Name = "txtEndereco";
             txtEndereco.Size = new Size(602, 23);
             txtEndereco.TabIndex = 7;
@@ -114,7 +116,7 @@
             // label7
             // 
             label7.AutoSize = true;
-            label7.Location = new Point(12, 262);
+            label7.Location = new Point(12, 337);
             label7.Name = "label7";
             label7.Size = new Size(56, 15);
             label7.TabIndex = 25;
@@ -226,11 +228,29 @@
             cmbListaPacientes.ValueMember = "CPF";
             cmbListaPacientes.SelectedIndexChanged += cmbListaPacientes_SelectedIndexChanged;
             // 
+            // txtUltimoProcedimento
+            // 
+            txtUltimoProcedimento.Location = new Point(12, 278);
+            txtUltimoProcedimento.Name = "txtUltimoProcedimento";
+            txtUltimoProcedimento.Size = new Size(245, 23);
+            txtUltimoProcedimento.TabIndex = 36;
+            // 
+            // label9
+            // 
+            label9.AutoSize = true;
+            label9.Location = new Point(13, 257);
+            label9.Name = "label9";
+            label9.Size = new Size(124, 15);
+            label9.TabIndex = 37;
+            label9.Text = "Último procedimento:";
+            // 
             // FormPaciente
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1075, 366);
+            ClientSize = new Size(1075, 512);
+            Controls.Add(label9);
+            Controls.Add(txtUltimoProcedimento);
             Controls.Add(groupBox2);
             Controls.Add(groupBox1);
             Controls.Add(btnCadastrar);
@@ -250,6 +270,7 @@
             Controls.Add(label1);
             Name = "FormPaciente";
             Text = "Consultorio";
+            Load += FormPaciente_Load;
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
             groupBox2.ResumeLayout(false);
@@ -280,5 +301,7 @@
         private GroupBox groupBox2;
         private Label label8;
         private ComboBox cmbListaPacientes;
+        private TextBox txtUltimoProcedimento;
+        private Label label9;
     }
 }

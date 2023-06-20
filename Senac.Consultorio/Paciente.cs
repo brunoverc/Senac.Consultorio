@@ -16,5 +16,6 @@ namespace Senac.Consultorio
         public decimal Peso { get; set; }
         public string Endereco { get; set; }
         public string Telefone { get; set; }
+        public string UltimoProcedimento { get; set; }
     }
 }
