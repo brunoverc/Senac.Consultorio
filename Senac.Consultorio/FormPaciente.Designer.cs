@@ -53,7 +53,6 @@
             btnCadastrar.TabIndex = 33;
             btnCadastrar.Text = "Cadastrar";
             btnCadastrar.UseVisualStyleBackColor = true;
-            btnCadastrar.Click += btnCadastrar_Click;
             // 
             // txtEndereco
             // 
