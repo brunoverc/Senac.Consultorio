@@ -43,6 +43,14 @@
             label3 = new Label();
             label2 = new Label();
             label1 = new Label();
+            groupBox1 = new GroupBox();
+            lblQuantidadePacientes = new Label();
+            groupBox2 = new GroupBox();
+            label8 = new Label();
+            txtBuscaPorCPF = new TextBox();
+            btnBuscar = new Button();
+            groupBox1.SuspendLayout();
+            groupBox2.SuspendLayout();
             SuspendLayout();
             // 
             // btnCadastrar
@@ -53,6 +61,7 @@
             btnCadastrar.TabIndex = 33;
             btnCadastrar.Text = "Cadastrar";
             btnCadastrar.UseVisualStyleBackColor = true;
+            btnCadastrar.Click += btnCadastrar_Click;
             // 
             // txtEndereco
             // 
@@ -166,11 +175,72 @@
             label1.TabIndex = 19;
             label1.Text = "Nome:";
             // 
+            // groupBox1
+            // 
+            groupBox1.Controls.Add(lblQuantidadePacientes);
+            groupBox1.Location = new Point(807, 27);
+            groupBox1.Name = "groupBox1";
+            groupBox1.Size = new Size(200, 100);
+            groupBox1.TabIndex = 34;
+            groupBox1.TabStop = false;
+            groupBox1.Text = "Quantidade de pacientes cadastrados";
+            // 
+            // lblQuantidadePacientes
+            // 
+            lblQuantidadePacientes.AutoSize = true;
+            lblQuantidadePacientes.Font = new Font("Segoe UI", 25F, FontStyle.Regular, GraphicsUnit.Point);
+            lblQuantidadePacientes.ForeColor = Color.DarkCyan;
+            lblQuantidadePacientes.Location = new Point(79, 35);
+            lblQuantidadePacientes.Name = "lblQuantidadePacientes";
+            lblQuantidadePacientes.Size = new Size(38, 46);
+            lblQuantidadePacientes.TabIndex = 0;
+            lblQuantidadePacientes.Text = "0";
+            // 
+            // groupBox2
+            // 
+            groupBox2.Controls.Add(btnBuscar);
+            groupBox2.Controls.Add(txtBuscaPorCPF);
+            groupBox2.Controls.Add(label8);
+            groupBox2.Location = new Point(807, 173);
+            groupBox2.Name = "groupBox2";
+            groupBox2.Size = new Size(283, 181);
+            groupBox2.TabIndex = 35;
+            groupBox2.TabStop = false;
+            groupBox2.Text = "Busca";
+            // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.Location = new Point(22, 46);
+            label8.Name = "label8";
+            label8.Size = new Size(28, 15);
+            label8.TabIndex = 0;
+            label8.Text = "CPF";
+            // 
+            // txtBuscaPorCPF
+            // 
+            txtBuscaPorCPF.Location = new Point(22, 81);
+            txtBuscaPorCPF.Name = "txtBuscaPorCPF";
+            txtBuscaPorCPF.Size = new Size(178, 23);
+            txtBuscaPorCPF.TabIndex = 1;
+            // 
+            // btnBuscar
+            // 
+            btnBuscar.Location = new Point(22, 128);
+            btnBuscar.Name = "btnBuscar";
+            btnBuscar.Size = new Size(75, 23);
+            btnBuscar.TabIndex = 2;
+            btnBuscar.Text = "Buscar";
+            btnBuscar.UseVisualStyleBackColor = true;
+            btnBuscar.Click += btnBuscar_Click;
+            // 
             // FormPaciente
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(627, 366);
+            ClientSize = new Size(1102, 366);
+            Controls.Add(groupBox2);
+            Controls.Add(groupBox1);
             Controls.Add(btnCadastrar);
             Controls.Add(txtEndereco);
             Controls.Add(txtPeso);
@@ -188,6 +258,11 @@
             Controls.Add(label1);
             Name = "FormPaciente";
             Text = "Consultorio";
+            Load += FormPaciente_Load;
+            groupBox1.ResumeLayout(false);
+            groupBox1.PerformLayout();
+            groupBox2.ResumeLayout(false);
+            groupBox2.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -209,5 +284,11 @@
         private Label label3;
         private Label label2;
         private Label label1;
+        private GroupBox groupBox1;
+        private Label lblQuantidadePacientes;
+        private GroupBox groupBox2;
+        private Button btnBuscar;
+        private TextBox txtBuscaPorCPF;
+        private Label label8;
     }
 }
