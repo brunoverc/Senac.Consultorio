@@ -21,15 +21,6 @@ namespace Senac.Consultorio
             _pacientes = pacientes;
         }
 
-        private void FormAtendimento_Load(object sender, EventArgs e)
-        {
-            CriarMockup();
-
-            foreach (var paciente in _pacientes)
-            {
-                cmbPaciente.Items.Add(paciente);
-            }
-        }
 
         public void CriarMockup()
         {
@@ -94,6 +85,13 @@ namespace Senac.Consultorio
             procedimento.MedicoProcedimento = medico2;
 
             cmbProcedimento.Items.Add(procedimento);
+        }
+
+        private void FormAtendimento_Load(object sender, EventArgs e)
+        {
+            CriarMockup();
+
+            
         }
 
         private void btnAtender_Click(object sender, EventArgs e)
